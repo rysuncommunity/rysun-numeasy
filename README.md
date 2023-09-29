@@ -29,9 +29,9 @@ To incorporate the @rysun/numeasy package into the project, follow the installat
    npm install @rysun/numeasy
    ```
 2. By using yarn:
-   `bash
-yarn add @rysun/numeasy 
-`
+   ```bash
+   yarn add @rysun/numeasy
+   ```
    These commands need to be executed within your terminal. Once you have successfully installed the package, you will gain full access to @rysun/numeasy.
 
 # Core Modules

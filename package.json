@@ -1,0 +1,33 @@
+{
+  "name": "@rysun/numeasy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "scripts": {
+    "version-select": "version-select",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "build:watch": "tsc -w"
+  },
+  "files": [
+    "lib/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rysuncommunity/rysun-numeasy"
+  },
+  "bugs": {
+    "url": "https://github.com/rysuncommunity/rysun-numeasy/issues"
+  },
+  "homepage": "https://github.com/rysuncommunity/rysun-numeasy#readme",
+  
+  "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "rysun",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.6.0"
+  }
+}

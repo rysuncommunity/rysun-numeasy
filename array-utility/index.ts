@@ -27,12 +27,28 @@ export const full = (rows: number, cols: number, fillValue: number) => {
     return zerosArray;
 }
 
-export const rand = (length: number) => {
-    const randomArray = [];
-    for (let i = 0; i < length; i++) {
-        randomArray.push(Math.random());
+export const rand = (param1: number, param2?: number) => {
+    if (param2 === undefined) {
+        const randomArray = [];
+        for (let i = 0; i < param1; i++) {
+            randomArray.push(Math.random());
+        }
+        return randomArray;
+    } else if (param2 !== undefined) {
+        const rows = param1;
+        const cols = param2;
+        const randomMatrix = [];
+        for (let i = 0; i < rows; i++) {
+            const row = [];
+            for (let j = 0; j < cols; j++) {
+                row.push(Math.random());
+            }
+            randomMatrix.push(row);
+        }
+        return randomMatrix;
+    } else {
+        throw new Error("Invalid number of parameters. Use 1 or 2 parameters.");
     }
-    return randomArray;
 }
 
 export const random = (rows: number, cols: number) => {
@@ -47,15 +63,30 @@ export const random = (rows: number, cols: number) => {
     return randomArray;
 }
 
-export const randInt = (min: number, max: number, rows: number, cols: number) => {
-    const randomMatrix = [];
-    for (let i = 0; i < rows; i++) {
-        const row = [];
-        for (let j = 0; j < cols; j++) {
+export const randInt = (min: number, max: number, rows?: number, cols?: number) => {
+    if (rows === undefined && cols === undefined) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    } else if (rows !== undefined && cols === undefined) {
+        const randomArray = [];
+        for (let i = 0; i < rows; i++) {
             const randomInt = Math.floor(Math.random() * (max - min + 1)) + min;
-            row.push(randomInt);
+            randomArray.push(randomInt);
         }
-        randomMatrix.push(row);
+        return randomArray;
     }
-    return randomMatrix;
+    else if (rows !== undefined && cols !== undefined) {
+        const randomMatrix = [];
+        for (let i = 0; i < rows; i++) {
+            const row = [];
+            for (let j = 0; j < cols; j++) {
+                const randomInt = Math.floor(Math.random() * (max - min + 1)) + min;
+                row.push(randomInt);
+            }
+            randomMatrix.push(row);
+        }
+        return randomMatrix;
+    }
+    else {
+        throw new Error("Invalid number of parameters. Use 1 or 2 parameters.");
+    }
 }

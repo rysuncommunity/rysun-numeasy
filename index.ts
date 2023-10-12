@@ -19,9 +19,9 @@ const MathsUtility = {
     ones: (rows: number, cols: number) => ones(rows, cols),
     full: (rows: number, cols: number, fillValue: number) => full(rows, cols, fillValue),
     random: {
-        rand: (length: number) => rand(length),
+        rand: (param1: number, param2?:number) => rand(param1, param2),
         random: (rows: number, cols: number) => random(rows, cols),
-        randInt: (min: number, max: number, rows: number, cols: number) => randInt(min, max, rows, cols),
+        randInt: (min: number, max: number, rows?: number, cols?: number) => randInt(min, max, rows, cols),
     },
     eye: (size: number) => eye(size),
     transpose: (matrix: any[]) => transpose(matrix),

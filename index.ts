@@ -1,5 +1,7 @@
 import { union, intersect, setDiff, setXOR } from "./setOperations"
 import { median, mean, standardDeviation, percentile, interpolate } from "./statistical-functions"
+import { arange, zeros, ones, full, random, rand, randInt } from "./array-utility"
+import { eye, transpose, add, matrixMultiply, determinant } from "./matrix-operations"
 
 const MathsUtility = {
     array: (arr: any) => arr,
@@ -12,6 +14,22 @@ const MathsUtility = {
     std: (arr: any, axis?: number) => standardDeviation(arr, axis),
     percentile: (arr: any, percent: number, axis?: number) => percentile(arr, percent, axis),
     interp: (input: number | number[], arr1: number[], arr2: number[]) => interpolate(input, arr1, arr2),
+    arange: (start: number, end: number, step: number) => arange(start, end, step),
+    zeros: (rows: number, cols: number) => zeros(rows, cols),
+    ones: (rows: number, cols: number) => ones(rows, cols),
+    full: (rows: number, cols: number, fillValue: number) => full(rows, cols, fillValue),
+    random: {
+        rand: (length: number) => rand(length),
+        random: (rows: number, cols: number) => random(rows, cols),
+        randInt: (min: number, max: number, rows: number, cols: number) => randInt(min, max, rows, cols),
+    },
+    eye: (size: number) => eye(size),
+    transpose: (matrix: any[]) => transpose(matrix),
+    add: (matrix1: any[], matrix2: any[]) => add(matrix1, matrix2),
+    dot: (matrix1: any[], matrix2: any[]) => matrixMultiply(matrix1, matrix2),
+    linalg: {
+        det: (matrix: any[]) => determinant(matrix),
+    }
 }
 
 export default MathsUtility

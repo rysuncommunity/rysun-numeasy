@@ -16,6 +16,11 @@
 
 4. Interpolation: This module facilitates the interpolation of data points, enabling users to represent and analyze data, especially when dealing with irregularly spaced data sets.
 
+5. Array Utility Functions: This module allow users to work with arrays. Users can able to create arrays with evenly 
+spaced elements, arrays with zeros, arrays with ones and arrays with random numbers.
+
+6. Matrix Library: This module allow users to perform matrix operations such as transpose, addition, multiplication, determinant etc.
+
 # Licensing
 
 @rysun/numeasy is distributed under the MIT license. This open-source license ensures that users have the freedom to use, modify, and distribute the package in their projects, fostering a vibrant and collaborative development community.
@@ -441,6 +446,311 @@ console.log ("The value of gold on day 3 is", day3_value)
 ##### Output
 ```bash
 The value of gold on day 3 is 56.5 
+```
+
+## 5. Array Utility Functions
+
+Array utility functions allow users to work with arrays.
+
+#### A. arange
+
+This function creates an array with evenly spaced elements as per the mentioned interval.
+
+##### Example
+```javascript
+import ms from "numeasy" 
+
+//Creates an array with elements from 1 to 10 with interval of 2
+const x = ms.arange(1,10,2); 
+console.log(x); 
+```
+##### Output
+```bash
+[1, 3, 5, 7, 9] 
+```
+
+#### B. zeros
+
+This function creates a new array of given shape, filled with zeros. 
+
+##### Example
+```javascript
+import ms from "numeasy" 
+
+//Creates two-dimensional array with 4 rows and 5 columns filled with zeros.
+const x =ms.zeros(4,5); 
+console.log(x);
+```
+##### Output
+```bash
+[ 
+[0,0,0,0,0 ], 
+[0,0,0,0,0 ], 
+[0,0,0,0,0 ], 
+[0,0,0,0,0 ] 
+] 
+```
+
+#### C. ones
+
+This function creates a new array of given shape, filled with ones. 
+
+##### Example
+```javascript
+import ms from "numeasy" 
+
+//Creates two-dimensional array with 4 rows and 5 columns filled with zeros.
+const x =ms.zeros(4,5); 
+console.log(x);
+```
+##### Output
+```bash
+[ 
+  [ 1, 1, 1, 1, 1 ], 
+  [ 1, 1, 1, 1, 1 ], 
+  [ 1, 1, 1, 1, 1 ], 
+  [ 1, 1, 1, 1, 1 ] 
+] 
+```
+
+#### D. full
+
+This function creates a new array of given shape, filled with value.
+
+##### Example
+```javascript
+import ms from "numeasy" 
+
+//Creates two-dimensional array with 4 rows and 4 columns filled with value 5.
+const x = ms.full(4,4,5); 
+console.log(x); 
+```
+##### Output
+```bash
+[
+  [ 5, 5, 5, 5 ],  
+  [ 5, 5, 5, 5 ],  
+  [ 5, 5, 5, 5 ],  
+  [ 5, 5, 5, 5 ]
+] 
+```
+
+#### E. random
+
+This submodule provides functions for generating random numbers.
+
+#### I. rand
+
+This function creates new one dimensional array with random values.
+
+##### Example
+```javascript
+import ms from "numeasy" 
+
+//creates one dimensional array with five random values
+const x = ms.random.rand(5) 
+console.log(x);  
+```
+##### Output
+```bash
+   [ 
+      0.714506621111916, 
+      0.736048246505113, 
+      0.5530125531776227, 
+      0.8934948245361629, 
+      0.9967797501065627 
+   ] 
+```
+
+#### II. random
+
+This function creates new two dimensional array with random values.
+
+##### Example
+```javascript
+import ms from "numeasy" 
+
+//creates two dimensional array with random values having 3 rows and 4 columns
+const x = ms.random.random(3,4) 
+console.log(x);
+```
+##### Output
+```bash
+[ 
+[ 
+0.29887155772703866, 
+0.6327841367170803, 
+0.9077211642231764, 
+0.7828846582948177 
+], 
+[ 
+0.5192162566236251, 
+0.36603868808909135, 
+0.0507932698224669, 
+0.425851373789212 
+], 
+[ 
+0.7443737827909902, 
+0.8127019421782091, 
+0.003890327404804328, 
+0.5747435408734711 
+] 
+] 
+```
+
+#### III. randInt
+
+This function takes two arguments, a lower bound and an upper bound. And it returns a random integer between lower 
+and upper bound. 
+
+##### Example
+```javascript
+import ms from "numeasy" 
+
+//creates two dimensional array with 3 rows and 4 columns having values between lower bound 10 and upper bound 100
+const x = ms.random.randInt(10,100,3,4) 
+console.log(x); 
+```
+##### Output
+```bash
+[
+  [29,59,75,84],
+  [28,63,13,66],
+  [49,21,73,61]
+] 
+```
+
+## 6. Matrix Library
+
+Matrix Library allow users to perform matrix operations such as transpose, addition, multiplication, determinant etc.
+
+#### A. eye
+
+This function creates a two dimensional array with 1s on the diagonal and 0s elsewhere.
+
+##### Example
+```javascript
+import ms from "numeasy" 
+
+//creates square matrix with 4 rows and 4 columns having 1s on the diagonal and 0s elsewhere
+const x = ms.eye(4) 
+console.log(x); 
+```
+##### Output
+```bash
+[ 
+[1,0,0,0],
+[0,1,0,0], 
+[0,0,1,0],
+[0,0,0,1]
+]
+```
+
+#### B. transpose
+
+This function swaps the axes of the given array. It means it changes the row elements into column elements 
+and the column elements into row elements.
+
+##### Example
+```javascript
+import ms from "numeasy" 
+
+//creates array with 2 rows and 3 columns
+const mat = ms.array(
+  [
+  [14,12,19],
+  [11,12,19]
+  ]
+  ) 
+
+//tranpose function changes the row elements into column elements and the column elements into row elements
+const x= ms.transpose(mat) 
+console.log(x); 
+```
+##### Output
+```bash
+[
+  [14,11],
+  [12,12],
+  [19,19]
+] 
+```
+
+#### C. addition
+
+This function is used when we want to compute the addition of two arrays. It adds arguments element-wise.
+
+##### Example
+```javascript
+import ms from "numeasy" 
+
+const arr1 = ms.array([
+  [18,25,37],
+  [5,-7,15]
+  ]) 
+const arr2 = ms.array([
+  [4,8,12],
+  [-13,24,17]
+  ])
+const x = ms.add(arr1,arr2) 
+console.log(x);
+```
+##### Output
+```bash
+[ 
+  [ 22, 33, 49 ],
+  [ -8, 17, 32 ]
+] 
+```
+
+#### D. dot
+
+This function is used to calculate multiplication of two matrices. The number of rows in the first matrix 
+should be equal to the number of columns in the second matrix.
+
+##### Example
+```javascript
+import ms from "numeasy" 
+
+const mat1 = ms.array([
+  [1,3],
+  [5,7]
+  ]) 
+const mat2 = ms.array([
+  [2,6],
+  [4,8]
+  ])
+const x = ms.dot(mat1, mat2) 
+console.log(x); 
+```
+##### Output
+```bash
+[ 
+  [ 14, 30 ],
+  [ 38, 86 ] 
+] 
+```
+#### E. det
+
+This function is used to calculate determinant of matrix. The determinant is a special number that can be 
+calculated from a matrix. But for that the matrix must be square (same number of rows and columns).
+##### Example
+```javascript
+import ms from "numeasy" 
+
+const matrix = ms.array(
+  [
+  [1,2,3],
+  [4,5,1],
+  [2,3,4]
+  ]
+  ) 
+const x = ms.linalg.det(matrix) 
+console.log(x); 
+```
+##### Output
+```bash
+-5 
 ```
 
 # Leverage @rysun/numeasy Today! 

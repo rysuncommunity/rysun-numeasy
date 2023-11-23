@@ -46,7 +46,7 @@ To incorporate the @rysun/numeasy package into the project, follow the installat
 #### A. Single Dimensional Array
 
 ```javascript
-import mu from ‘@rysun/numeasy’
+import mu from "@rysun/numeasy"
 
 let A = mu.array([1,2,3]);
 
@@ -86,7 +86,7 @@ The union of two sets A and B includes all the elements of sets A and B.
 ##### Example
 
 ```javascript
-import ms from ‘@rysun/numeasy’
+import ms from "@rysun/numeasy"
 
 let A = ms.array([1,2,3]);
 let B = ms.array([7,8,3]);
@@ -109,7 +109,7 @@ The intersection of two sets A and B includes the common elements between sets A
 ##### Example
 
 ```javascript
-import mu from "numeasy";
+import mu from "@rysun/numeasy"
 
 const arr1 = mu.array([
   [1, 2, 3],
@@ -139,7 +139,7 @@ The difference between two sets A and B includes elements of set A that are not 
 
 ```javascript
 //Set Difference for 1D array
-import mu from "numeasy";
+import mu from "@rysun/numeasy"
 
 const arr1 = mu.array([1, 2, 3]);
 const arr2 = mu.array([3, 4, 5]);
@@ -157,7 +157,7 @@ console.log("setDiff of two arrays:", result);
 
 ```javascript
 //Set Difference for 2D array
-import mu from "numeasy";
+import mu from "@rysun/numeasy"
 
 const arr1 = mu.array([
   [1, 2, 3],
@@ -187,7 +187,7 @@ The symmetric difference between two sets A and B includes all elements of A and
 
 ```javascript
 //Set Symmetric Difference for 1D array
-import mu from "numeasy";
+import mu from "@rysun/numeasy"
 
 const arr1 = mu.array([1, 2, 3]);
 const arr2 = mu.array([3, 4, 5]);
@@ -205,7 +205,7 @@ console.log("Symmetric Difference of two arrays:", result);
 
 ```javascript
 //Set Symmetric Difference for 2D array
-import mu from "numeasy";
+import mu from "@rysun/numeasy"
 
 const arr1 = mu.array([
   [1, 2, 3],
@@ -239,7 +239,7 @@ The median is the middle value in a sorted array. For odd-sized arrays, it's the
 
 ```javascript
 // Find Median from 1D array
-import ms from "numeasy";
+import ms from "@rysun/numeasy"
 
 const arr = ms.array([1, 2, 3, 4, 5]);
 
@@ -256,7 +256,7 @@ console.log("median:", result);
 
 ```javascript
 // Find Median from 2D array
-import ms from "numeasy";
+import ms from "@rysun/numeasy"
 
 const arr = ms.array([
   [2, 4, 6],
@@ -293,7 +293,7 @@ The mean value of an array is the average value of all the elements in the array
 
 ```javascript
 // Find Mean from 1D array
-import ms from "numeasy";
+import ms from "@rysun/numeasy"
 
 const arr = ms.array([1, 2, 3, 4, 5]);
 
@@ -310,7 +310,7 @@ console.log("mean:", result);
 
 ```javascript
 // Find Mean from 2D array
-import ms from "numeasy";
+import ms from "@rysun/numeasy"
 
 const arr = ms.array([
   [2, 4, 6],
@@ -347,7 +347,7 @@ The standard deviation is a measure of the spread of data in an array. It gives 
 
 ```javascript
 // Standard Deviation of 1D array
-import ms from "numeasy";
+import ms from "@rysun/numeasy"
 
 const arr = ms.array([1, 2, 3, 4, 5]);
 
@@ -364,7 +364,7 @@ console.log(result);
 
 ```javascript
 // Standard Deviation of 2D array
-import ms from "numeasy"
+import ms from "@rysun/numeasy"
 
 const arr = ms.array([[2, 4, 6], [8, 10, 12], [14, 16, 18]])
 
@@ -392,7 +392,7 @@ The Percentile function is used to calculate the nth percentile of a given array
 ##### Example
 ```javascript
 // Compute Percentile of 1D array 
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 const arr = ms.array([1, 2, 3, 4, 5]) 
 
@@ -407,7 +407,7 @@ console.log("percentile:", result);
 
 ```javascript
 // Compute Percentile of 2D array 
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 const arr = ms.array([[2, 4, 6], [8, 10, 12], [14, 16, 18]]) 
 
@@ -434,7 +434,7 @@ console.log("25th Percentile of entire array :", res3);
 Interpolation estimates the value of a function at points where the value is not known. 
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 const day = ms.array([2, 4, 7]) 
 const gold_price = ms.array([55, 58, 65]) 
@@ -458,7 +458,7 @@ This function creates an array with evenly spaced elements as per the mentioned 
 
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 //Creates an array with elements from 1 to 10 with interval of 2
 const x = ms.arange(1,10,2); 
@@ -475,10 +475,10 @@ This function creates a new array of given shape, filled with zeros.
 
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 //Creates two-dimensional array with 4 rows and 5 columns filled with zeros.
-const x =ms.zeros(4,5); 
+const x = ms.zeros(4,5); 
 console.log(x);
 ```
 ##### Output
@@ -497,10 +497,10 @@ This function creates a new array of given shape, filled with ones.
 
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 //Creates two-dimensional array with 4 rows and 5 columns filled with zeros.
-const x =ms.zeros(4,5); 
+const x = ms.ones(4,5); 
 console.log(x);
 ```
 ##### Output
@@ -519,7 +519,7 @@ This function creates a new array of given shape, filled with value.
 
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 //Creates two-dimensional array with 4 rows and 4 columns filled with value 5.
 const x = ms.full(4,4,5); 
@@ -545,7 +545,7 @@ This function creates new one dimensional array with random values.
 
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 //creates one dimensional array with five random values
 const x = ms.random.rand(5) 
@@ -568,7 +568,7 @@ This function creates new two dimensional array with random values.
 
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 //creates two dimensional array with random values having 3 rows and 4 columns
 const x = ms.random.random(3,4) 
@@ -605,7 +605,7 @@ and upper bound.
 
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 //creates two dimensional array with 3 rows and 4 columns having values between lower bound 10 and upper bound 100
 const x = ms.random.randInt(10,100,3,4) 
@@ -630,7 +630,7 @@ This function creates a two dimensional array with 1s on the diagonal and 0s els
 
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 //creates square matrix with 4 rows and 4 columns having 1s on the diagonal and 0s elsewhere
 const x = ms.eye(4) 
@@ -653,7 +653,7 @@ and the column elements into row elements.
 
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 //creates array with 2 rows and 3 columns
 const mat = ms.array(
@@ -682,7 +682,7 @@ This function is used when we want to compute the addition of two arrays. It add
 
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 const arr1 = ms.array([
   [18,25,37],
@@ -710,7 +710,7 @@ should be equal to the number of columns in the second matrix.
 
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 const mat1 = ms.array([
   [1,3],
@@ -736,7 +736,7 @@ This function is used to calculate determinant of matrix. The determinant is a s
 calculated from a matrix. But for that the matrix must be square (same number of rows and columns).
 ##### Example
 ```javascript
-import ms from "numeasy" 
+import ms from "@rysun/numeasy"
 
 const matrix = ms.array(
   [

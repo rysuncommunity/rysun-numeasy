@@ -1,7 +1,7 @@
 {
   "name": "@rysun/numeasy",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "Get help in performing various mathematical and statistical operations.",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "scripts": {

@@ -20,7 +20,6 @@
     "url": "https://github.com/rysuncommunity/rysun-numeasy/issues"
   },
   "homepage": "https://github.com/rysuncommunity/rysun-numeasy#readme",
-  
   "keywords": [],
   "publishConfig": {
     "access": "public"
@@ -28,6 +27,6 @@
   "author": "rysun",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "20.11.17"
+    "@types/node": "^22.5.5"
   }
 }

@@ -82,3 +82,12 @@ export const centerEle = (arr: string[], width: number, padChar: string) => {
 
     return centeredArray;
 }
+
+/**
+ * Converts each string element to uppercase
+ * @param arr
+ * @returns
+ */
+export const upperCase = (arr: string[]) => {
+    return  arr.map(element => element.toUpperCase());
+}

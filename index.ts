@@ -1,4 +1,4 @@
-import { union, intersect, setDiff, setXOR } from "./setOperations"
+import { union, intersect, setDiff, setXOR, eleConcat } from "./setOperations"
 import { median, mean, standardDeviation, percentile, interpolate } from "./statistical-functions"
 import { arange, zeros, ones, full, random, rand, randInt } from "./array-utility"
 import { eye, transpose, add, matrixMultiply, determinant } from "./matrix-operations"
@@ -9,6 +9,7 @@ const MathsUtility = {
     intersect: (arr1: number[], arr2: number[]) => intersect(arr1, arr2),
     setDiff: (arr1: number[], arr2: number[]) => setDiff(arr1, arr2),
     setXOR: (arr1: number[], arr2: number[]) => setXOR(arr1, arr2),
+    eleConcat: (arr1: string[], arr2: string[]) => eleConcat(arr1, arr2),
     median: (arr: any, axis?: number) => median(arr, axis),
     mean: (arr: any, axis?: number) => mean(arr, axis),
     std: (arr: any, axis?: number) => standardDeviation(arr, axis),

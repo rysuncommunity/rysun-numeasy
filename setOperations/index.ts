@@ -43,3 +43,13 @@ export const setXOR = (arrA: number[], arrB: number[]) => {
 
     return result
 }
+
+/**
+ * Concatenates two arrays of strings element-wise javascript
+ * @param arrA
+ * @param arrB
+ * @returns
+ */
+export const eleConcat = (arrA: string[], arrB: string[]) => {
+    return arrA.map((element, index) => element + arrB[index]);
+}

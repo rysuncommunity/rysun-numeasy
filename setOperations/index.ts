@@ -91,3 +91,21 @@ export const centerEle = (arr: string[], width: number, padChar: string) => {
 export const upperCase = (arr: string[]) => {
     return  arr.map(element => element.toUpperCase());
 }
+
+/**
+ * Converts each string element to lowercase
+ * @param arr
+ * @returns
+ */
+export const lowerCase = (arr: string[]) => {
+    return  arr.map(element => element.toLowerCase());
+}
+
+/**
+ * Splits each element in the array into a list of words
+ * @param arr
+ * @returns
+ */
+export const splitEle = (arr: string[]) => {
+    return arr.map(element => element.split(" "));
+}

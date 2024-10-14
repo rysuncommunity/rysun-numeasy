@@ -1,4 +1,4 @@
-import { union, intersect, setDiff, setXOR, eleConcat, repeatEle, centerEle, upperCase, lowerCase, splitEle } from "./setOperations"
+import { union, intersect, setDiff, setXOR, eleConcat, repeatEle, centerEle, upperCase, lowerCase, splitEle, stripEle } from "./setOperations"
 import { median, mean, standardDeviation, percentile, interpolate } from "./statistical-functions"
 import { arange, zeros, ones, full, random, rand, randInt } from "./array-utility"
 import { eye, transpose, add, matrixMultiply, determinant } from "./matrix-operations"
@@ -15,6 +15,7 @@ const MathsUtility = {
     upperCase: (arr: string[]) => upperCase(arr),
     lowerCase: (arr: string[]) => lowerCase(arr),
     splitEle: (arr: string[]) => splitEle(arr),
+    stripEle:  (arr: string[]) => stripEle(arr),
     median: (arr: any, axis?: number) => median(arr, axis),
     mean: (arr: any, axis?: number) => mean(arr, axis),
     std: (arr: any, axis?: number) => standardDeviation(arr, axis),

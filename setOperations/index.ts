@@ -109,3 +109,12 @@ export const lowerCase = (arr: string[]) => {
 export const splitEle = (arr: string[]) => {
     return arr.map(element => element.split(" "));
 }
+
+/**
+ * Removes leading and trailing characters (whitespace by default) from each string in the array
+ * @param arr
+ * @returns
+ */
+export const stripEle = (arr: string[]) => {
+    return arr.map(element => element.trim());
+}

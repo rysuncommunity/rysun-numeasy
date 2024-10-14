@@ -45,11 +45,21 @@ export const setXOR = (arrA: number[], arrB: number[]) => {
 }
 
 /**
- * Concatenates two arrays of strings element-wise javascript
+ * Concatenates two arrays of strings element-wise
  * @param arrA
  * @param arrB
  * @returns
  */
 export const eleConcat = (arrA: string[], arrB: string[]) => {
     return arrA.map((element, index) => element + arrB[index]);
+}
+
+/**
+ * Repeats each string element in the array a specified number of times
+ * @param arr
+ * @param repeatCount
+ * @returns
+ */
+export const repeatEle = (arr: string[], repeatCount: number) => {
+    return arr.map(element => element.repeat(repeatCount));
 }

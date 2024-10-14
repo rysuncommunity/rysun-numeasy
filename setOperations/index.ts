@@ -89,7 +89,7 @@ export const centerEle = (arr: string[], width: number, padChar: string) => {
  * @returns
  */
 export const upperCase = (arr: string[]) => {
-    return  arr.map(element => element.toUpperCase());
+    return arr.map(element => element.toUpperCase());
 }
 
 /**
@@ -98,7 +98,7 @@ export const upperCase = (arr: string[]) => {
  * @returns
  */
 export const lowerCase = (arr: string[]) => {
-    return  arr.map(element => element.toLowerCase());
+    return arr.map(element => element.toLowerCase());
 }
 
 /**
@@ -117,4 +117,14 @@ export const splitEle = (arr: string[]) => {
  */
 export const stripEle = (arr: string[]) => {
     return arr.map(element => element.trim());
+}
+
+/**
+ * Returns the lowest index in each element where the substring is found
+ * @param arr
+ * @param subString
+ * @returns
+ */
+export const findIndex = (arr: string[], subString: string) => {
+    return arr.map(element => element.indexOf(subString));
 }

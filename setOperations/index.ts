@@ -128,3 +128,13 @@ export const stripEle = (arr: string[]) => {
 export const findIndex = (arr: string[], subString: string) => {
     return arr.map(element => element.indexOf(subString));
 }
+
+/**
+ * joins the elements of each string in the array with a specified separator
+ * @param arr
+ * @param separator
+ * @returns
+ */
+export const joinEle= (arr: string[], separator: string) => {
+    return arr.map(element => element.split("").join(separator));
+}

@@ -63,3 +63,22 @@ export const eleConcat = (arrA: string[], arrB: string[]) => {
 export const repeatEle = (arr: string[], repeatCount: number) => {
     return arr.map(element => element.repeat(repeatCount));
 }
+
+/**
+ * Centers the string in an array element and pads it with a specified character
+ * @param arr
+ * @param width
+ * @param padChar
+ * @returns
+ */
+export const centerEle = (arr: string[], width: number, padChar: string) => {
+    const centeredArray = arr.map(element => {
+        const paddingTotal = width - element.length;
+        const paddingStart = Math.floor(paddingTotal / 2);  // Calculate padding on each side
+
+        return element.padStart(element.length + paddingStart, padChar)
+                      .padEnd(width, padChar);
+    });
+
+    return centeredArray;
+}

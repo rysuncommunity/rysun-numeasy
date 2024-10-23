@@ -138,3 +138,18 @@ export const findIndex = (arr: string[], subString: string) => {
 export const joinEle= (arr: string[], separator: string) => {
     return arr.map(element => element.split("").join(separator));
 }
+
+/**
+ * compare two strings element-wise and returns a boolean array indicating whether the strings in corresponding elements of the arrays are equal
+ * @param arr1
+ * @param arr2
+ * @returns
+ */
+export const isEqualEle = (arr1: string[], arr2: string[]) => {
+    if (arr1.length !== arr2.length) {
+        throw new Error("Arrays must have the same length");
+    }
+
+    // Compare element-wise and return a boolean array
+    return arr1.map((item, index) => item === arr2[index]);
+}

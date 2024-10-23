@@ -153,3 +153,13 @@ export const isEqualEle = (arr1: string[], arr2: string[]) => {
     // Compare element-wise and return a boolean array
     return arr1.map((item, index) => item === arr2[index]);
 }
+
+/**
+ * Counting a substring in an array of strings
+ * @param arr
+ * @param subString
+ * @returns
+ */
+export const countOccurrence = (arr: string[], subString: string) => {
+    return arr.map(str => (str.split(subString).length - 1));
+}

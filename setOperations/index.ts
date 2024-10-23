@@ -163,3 +163,13 @@ export const isEqualEle = (arr1: string[], arr2: string[]) => {
 export const countOccurrence = (arr: string[], subString: string) => {
     return arr.map(str => (str.split(subString).length - 1));
 }
+
+/**
+ * check if strings end with a suffix
+ * @param arr
+ * @param suffix
+ * @returns
+ */
+export const checkEndsWith = (arr: string[], suffix: string) => {
+    return arr.map(str => str.endsWith(suffix));
+}

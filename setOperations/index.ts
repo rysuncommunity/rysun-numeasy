@@ -173,3 +173,13 @@ export const countOccurrence = (arr: string[], subString: string) => {
 export const checkEndsWith = (arr: string[], suffix: string) => {
     return arr.map(str => str.endsWith(suffix));
 }
+
+/**
+ * check if strings starts with a suffix
+ * @param arr
+ * @param suffix
+ * @returns
+ */
+export const checkStartsWith = (arr: string[], suffix: string) => {
+    return arr.map(str => str.startsWith(suffix));
+}

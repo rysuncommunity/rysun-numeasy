@@ -183,3 +183,32 @@ export const checkEndsWith = (arr: string[], suffix: string) => {
 export const checkStartsWith = (arr: string[], suffix: string) => {
     return arr.map(str => str.startsWith(suffix));
 }
+
+/**
+ * reshape array
+ * @param arr
+ * @param shape
+ * @returns
+ */
+export const reshapeArr = <T>(arr: T[], shape: number[]) => {
+    let totalSize = shape.reduce((a, b) => a * b);
+
+    if (arr.length !== totalSize) {
+        throw new Error("Number of elements does not match the new shape");
+    }
+
+    return helper(arr.slice(), shape);
+}
+
+const helper = <T>(arr:T[], shape:number[]): T[] | T[][] =>  {
+    if (shape.length === 1) {
+        return arr.splice(0, shape[0]);
+    }
+
+    let size = shape[0];
+    let newArr: T[][] = [];
+    for (let i = 0; i < size; i++) {
+        newArr.push(helper(arr, shape.slice(1)) as T[]);
+    }
+    return newArr;
+}

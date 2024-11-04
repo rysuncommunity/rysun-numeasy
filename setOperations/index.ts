@@ -212,3 +212,24 @@ const helper = <T>(arr:T[], shape:number[]): T[] | T[][] =>  {
     }
     return newArr;
 }
+
+/**
+ * resize matrix
+ * @param matrix
+ * @param row
+ * @param col
+ * @returns
+ */
+export const resizeArr = <T>(matrix: T[], row: number, col: number)=>{
+    const flatArray = matrix.flat(); // Flatten the original matrix
+
+    // Resize: Create a new array and fill it with elements
+    const resizedMatrix = new Array(row).fill(null).map((_, rowIndex) => {
+        return new Array(col).fill(null).map((_, colIndex) => {
+            // Wrap around or truncate
+            return flatArray[(rowIndex * col + colIndex) % flatArray.length];
+        });
+    });
+
+    return resizedMatrix;
+}

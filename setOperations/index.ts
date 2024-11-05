@@ -265,63 +265,32 @@ export const moveAxis = <T>(array: T[][][], from: number, to: number): T[][][] =
         throw new Error("Invalid axis positions");
     }
 
-    // Create the new axes order
     const axes = Array.from({ length: shape.length }, (_, i) => i);
-    axes.splice(to, 0, axes.splice(from, 1)[0]); // Move axis from 'from' to 'to'
+    axes.splice(to, 0, axes.splice(from, 1)[0]); // Move 'from' to 'to'
 
     return transpose(array, axes);
 }
 
+/**
+ * rearrange array according to new axis order
+ * @param array
+ * @param axes
+ * @returns
+ */
 const transpose = <T>(array: T[][][], axes: number[]): T[][][] => {
-    const result: any[] = createEmptyArray(array, axes);
-    const dimCount = axes.length;
+    const shape = getArrayShape(array);
+    const resultShape = axes.map(axis => shape[axis]);
 
-    function recursiveTranspose(src: any[], dest: any[], currentAxes: number[], depth: number) {
-        const axis = currentAxes[depth];
+    const recursiveTranspose = (arr: any[], level: number): any[] => {
+        if (level === axes.length - 1)
+            return arr;
 
-        // Iterate over the source array according to the current axis
-        for (let i = 0; i < src.length; i++) {
-            const index = getIndexForAxis(i, currentAxes, depth);
-
-            if (depth === dimCount - 1) {
-                // Assign the final axis values directly
-                dest[index] = src[i];
-            } else {
-                // Ensure the destination is an array at this depth
-                dest[index] = dest[index] || createEmptyArrayForAxis(array, axes, depth + 1);
-                recursiveTranspose(src[i], dest[index], currentAxes, depth + 1);
-            }
+        const transposed: any[] = [];
+        for (let i = 0; i < resultShape[level]; i++) {
+            transposed[i] = recursiveTranspose(arr.map(subArr => subArr[i]), level + 1);
         }
+        return transposed;
     }
 
-    recursiveTranspose(array, result, axes, 0);
-    return result;
-}
-
-const createEmptyArray = <T>(array: T[][][], axes: number[]): T[][][] => {
-    const shape = axes.map(axis => getDimensionSize(array, axis));
-    return createNestedArray<T>(shape);
-}
-
-const createEmptyArrayForAxis = <T>(array: T[][][], axes: number[], depth: number): any[] => {
-    const size = getDimensionSize(array, axes[depth]);
-    return Array.from({ length: size }, () => createEmptyArrayForAxis(array, axes, depth + 1));
-}
-
-const getDimensionSize = (array: any[], axis: number): number => {
-    return array.map(arr => Array.isArray(arr) ? arr.length : 0).reduce((max, curr) => Math.max(max, curr), 0);
-}
-
-const createNestedArray = <T>(shape: number[]): any[] => {
-    let arr: any = [];
-    for (let i = 0; i < shape[0]; i++) {
-        arr.push(shape.length > 1 ? createNestedArray(shape.slice(1)) : null);
-    }
-    return arr;
-}
-
-// Get the new index for the current axis position
-const getIndexForAxis = (index: number, axes: number[], depth: number): number => {
-    // Determine the new index based on the original index and the new axes order
-    return index; // Implement your logic to map old index to new index
+    return recursiveTranspose(array, 0);
 }

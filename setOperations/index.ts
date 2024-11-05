@@ -272,7 +272,7 @@ export const moveAxis = <T>(array: T[][][], from: number, to: number): T[][][] =
 }
 
 /**
- * rearrange array according to new axis order
+ * rearrange array according to new axes order
  * @param array
  * @param axes
  * @returns
@@ -282,8 +282,9 @@ const transpose = <T>(array: T[][][], axes: number[]): T[][][] => {
     const resultShape = axes.map(axis => shape[axis]);
 
     const recursiveTranspose = (arr: any[], level: number): any[] => {
-        if (level === axes.length - 1)
+        if (level === axes.length - 1) {
             return arr;
+        }
 
         const transposed: any[] = [];
         for (let i = 0; i < resultShape[level]; i++) {
@@ -293,4 +294,48 @@ const transpose = <T>(array: T[][][], axes: number[]): T[][][] => {
     }
 
     return recursiveTranspose(array, 0);
+}
+
+/**
+ * rearrange array according to new axes
+ * @param array
+ * @param axis1
+ * @param axis2
+ * @returns
+ */
+const transposeAxes = <T>(array: T[][][], axis1: number, axis2: number): T[][][] => {
+    const shape = getArrayShape(array);
+    const result: T[][][] = [];
+
+    for (let i = 0; i < shape[axis2]; i++) {
+        const temp: T[][] = [];
+        for (let j = 0; j < shape[axis1]; j++) {
+            temp.push(array[j][i]);
+        }
+        result.push(temp);
+    }
+
+    return result;
+}
+
+/**
+ * swap axes of arrays
+ * @param array
+ * @param axis1
+ * @param axis2
+ * @returns
+ */
+export const  swapAxes = <T>(array: T[][][], axis1: number, axis2: number): T[][][] => {
+    if (axis1 === axis2) {
+        return array;
+    }
+
+    const shape = getArrayShape(array);
+
+    // Validate axes
+    if (axis1 < 0 || axis1 >= shape.length || axis2 < 0 || axis2 >= shape.length) {
+        throw new Error("Invalid axes for swap");
+    }
+
+    return transposeAxes(array, axis1, axis2);
 }

@@ -5,10 +5,34 @@ import { eye, transpose, add, matrixMultiply, determinant } from "./matrix-opera
 
 const MathsUtility = {
     array: (arr: any) => arr,
-    union: (arr1: number[], arr2: number[]) => union(arr1, arr2),
-    intersect: (arr1: number[], arr2: number[]) => intersect(arr1, arr2),
-    setDiff: (arr1: number[], arr2: number[]) => setDiff(arr1, arr2),
-    setXOR: (arr1: number[], arr2: number[]) => setXOR(arr1, arr2),
+    union: <T>(arr1: T[], arr2: T[]): T[] => {
+        try {
+            return union(arr1, arr2);
+        } catch (error) {
+            throw new Error(`Union operation failed: ${(error as Error).message}`);
+        }
+    },
+    intersect: <T>(arr1: T[], arr2: T[]) => {
+        try {
+            return intersect(arr1, arr2);
+        } catch (error) {
+            throw new Error(`Intersect operation failed: ${(error as Error).message}`);
+        }
+    },
+    setDiff: <T>(arr1: T[], arr2: T[]) => {
+        try {
+            return setDiff(arr1, arr2);
+        } catch (error) {
+            throw new Error(`SetDifference operation failed: ${(error as Error).message}`);
+        }
+    },
+    setXOR: <T>(arr1: T[], arr2: T[]) => {
+        try {
+            return setXOR(arr1, arr2);
+        } catch (error) {
+            throw new Error(`SetXOR operation failed: ${(error as Error).message}`);
+        }
+    },
     median: (arr: any, axis?: number) => median(arr, axis),
     mean: (arr: any, axis?: number) => mean(arr, axis),
     std: (arr: any, axis?: number) => standardDeviation(arr, axis),
